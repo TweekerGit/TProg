@@ -50,7 +50,7 @@ namespace ElementarySchool
 
 		private string GenerateMaleName() => PickRandom(MaleNames) + " " + PickRandom(Surnames);
 		private string GenerateFemaleName() => PickRandom(FemaleNames) + " " + PickRandom(Surnames);
-		private byte GenerateAge() => (byte) _rand.Next(5, 16);
+		private byte GenerateAge() => (byte) _rand.Next(6, 15);
 
 		private T PickRandom<T>(IReadOnlyList<T> array) => array[_rand.Next(0, array.Count)];
 	}
