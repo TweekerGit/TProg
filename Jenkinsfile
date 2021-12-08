@@ -21,7 +21,7 @@ pipeline {
 						}
 					}
 				steps{
-					sh "cmake ../ && cmake --build ."
+					sh "dotnet ElementarySchool.Web.dll"
 				}
 				post{
 					success{
