@@ -10,6 +10,9 @@ pipeline {
 				}
 			}
 			stage('Build'){
+				agent{docker {image 'dotnetapp'
+						}
+					}
 				steps{
 					echo "Building ${BUILD_NUMBER}"
 					sh "dotnet build"
