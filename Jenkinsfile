@@ -10,7 +10,7 @@ pipeline {
 				}
 			}
 			stage('Build'){
-				agent{docker {image 'elementary-school'
+				agent{docker {image 'dotnet'
 						}
 					}
 				steps{
@@ -20,7 +20,7 @@ pipeline {
 				}
 			}
 			stage('Test'){
-				agent{docker {image 'elementary-school'
+				agent{docker {image 'dotnet'
 						}
 					}
 				steps{
