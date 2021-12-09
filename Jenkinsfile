@@ -16,7 +16,10 @@ pipeline {
 				}
 			}
 			stage('Test'){
-				agent any
+				agent{docker {image 'dotnetapp'
+						args '-u=\"root\"'
+						}
+					}
 				steps{
 					sh "dotnet ElementarySchool.Web.dll"
 				}
