@@ -11,15 +11,12 @@ pipeline {
 			}
 			stage('Build'){
 				steps{
-					echo "Building ...${BUILD_NUMBER}"
-					echo "Build compleated"
+					echo "Building ${BUILD_NUMBER}"
+					echo "Build completed"
 				}
 			}
 			stage('Test'){
-				agent{docker {image 'alpine'
-						args '-u=\"root\"'
-						}
-					}
+				agent any
 				steps{
 					sh "dotnet ElementarySchool.Web.dll"
 				}
@@ -28,7 +25,7 @@ pipeline {
 						echo "Application compleated"
 					}
 					failure{
-						echo "Smth wrong"
+						echo "Error"
 					}
 				}
 			}
