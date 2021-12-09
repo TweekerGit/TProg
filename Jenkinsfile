@@ -10,7 +10,7 @@ pipeline {
 				}
 			}
 			stage('Build'){
-				agent{docker {image 'dotnet-sdk'
+				agent{docker {image 'dotnet-sdk-5.0'
 						}
 					}
 				steps{
@@ -20,7 +20,7 @@ pipeline {
 				}
 			}
 			stage('Test'){
-				agent{docker {image 'dotnet-sdk'
+				agent{docker {image 'dotnet-sdk-5.0'
 						}
 					}
 				steps{
