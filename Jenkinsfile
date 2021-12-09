@@ -18,7 +18,6 @@ pipeline {
 			}
 			stage('Test'){
 				agent{docker {image 'dotnetapp'
-						args '-u=\"root\"'
 						}
 					}
 				steps{
