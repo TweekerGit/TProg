@@ -12,6 +12,7 @@ pipeline {
 			stage('Build'){
 				steps{
 					echo "Building ${BUILD_NUMBER}"
+					sh "dotnet build"
 					echo "Build completed"
 				}
 			}
